@@ -22,10 +22,10 @@ function checkBy(birthday) {
     var differenceInMilisecond = today.valueOf() - birthday.valueOf();
 
     var year_age = Math.floor(differenceInMilisecond / 31536000000);
-    var day_age = (Math.floor((differenceInMilisecond % 31536000000) / 86400000)) % 30;
+    var day_age = (Math.floor((differenceInMilisecond % 31536000000) / 86400000));
     var month_age = Math.floor(day_age / 30);
 
-    //day_age = day_age % 30;
+    day_age = day_age % 30;
 
     if (isNaN(year_age) || isNaN(month_age) || isNaN(day_age)) {
         return $("#exact_age").text("Invalid birthday - Please try again!");
